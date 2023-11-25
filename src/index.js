@@ -1,6 +1,12 @@
 import express from "express";
 import usuariosRoutes from "./routes/usuarios.routes.js";
 import inventarioRoutes from "./routes/inventario.routes.js";
+import ProductosSamsungRoutes from "./routes/ProductosSamsung.routes.js";
+import ProductosAppleRoutes from "./routes/ProductosApple.routes.js";
+import ProductosHuaweiRoutes from "./routes/productosHuawei.routes.js";
+import ProductosMotorolaRoutes from "./routes/productosMotorola.routes.js"
+import ProductosOppoRoutes from "./routes/productosOppo.routes.js";
+import ProductosXiomiRoutes from "./routes/productosXiaomi.routes.js"
 import { PORT } from "./config.js";
 import cors from "cors";
 
@@ -33,6 +39,15 @@ app.use(express.json());
 // Rutas de la API
 app.use("/api", usuariosRoutes);
 app.use("/api", inventarioRoutes);
+app.use("/api", ProductosSamsungRoutes);
+app.use("/api", ProductosAppleRoutes);
+app.use("/api", ProductosHuaweiRoutes); 
+app.use("/api", ProductosMotorolaRoutes);
+app.use("/api", ProductosOppoRoutes);
+app.use("/api", ProductosXiomiRoutes);
+
+
+
 
 // Ruta no encontrada
 app.use((req, res, next) => {
